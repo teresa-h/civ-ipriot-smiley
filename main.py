@@ -6,6 +6,7 @@ import time
 
 from happy import Happy
 
+
 def main():
     smiley = Happy()
 

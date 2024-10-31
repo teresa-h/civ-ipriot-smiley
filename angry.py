@@ -1,13 +1,13 @@
 from smiley import Smiley
 import time
 
-class Sad(Smiley):
-
+class Angry(Smiley):
     def __init__(self):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
+        self.draw_eyebrows()
 
     def draw_mouth(self):
         """
@@ -19,25 +19,18 @@ class Sad(Smiley):
 
     def draw_eyes(self, wide_open=True):
         """
-        Draws open or closed eyes on a smiley
-        :param wide_open: Render eyes wide open or shut
+        Draws open or closed eyes in a smiley
+        :param wide_open : Render eyes wide open or shut
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [18, 21, 26, 29]
         for pixel in eyes:
             if wide_open:
                 eyes = self.BLANK
             else:
-                eyes = self.YELLOW
+                eyes = self.RED
             self.pixels[pixel] = eyes
 
-    def blink(self, delay=0.25):
-        """
-       Blinks the smiley's eyes once
-
-        :param delay: Delay between blinks (in seconds)
-        """
-        self.draw_eyes(wide_open=False)
-        self.show()
-        time.sleep(delay)
-        self.draw_eyes(wide_open=True)
-        self.show()
+    def draw_eyebrows(self):
+        eyebrow = [9, 14]
+        for pixel in eyebrow:
+            self.pixels[pixel] = self.BLANK

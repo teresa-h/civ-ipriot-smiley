@@ -198,7 +198,7 @@ python3 main.py
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Abstraction is a method used wherein we identify a characteristic that is required which we want to create an object out of. How this characteristic gets implemented though is not important. When an abstract class is created, the class is not instantiated. It is merely a blueprint for production of said object. An example of this is the blinkable class. It inherits from ABC, but what makes it abstract is the blink method. It uses the decorator abstract method, which means any class that inherits from blinkable blinks and needs to be defined when initilised. How it actually blinks is not defined. 
+> Abstraction is a method used wherein we identify a characteristic that is required which we want to create an object out of. How this characteristic gets implemented though is not important. When an abstract class is created, the class is not instantiated. It is merely a blueprint for production of said object. An example of this is the blinkable class. It inherits from ABC (which gives it the abstract base case label, so we identify it as such), but what makes it abstract is the blink method and its lack of definition. It uses the decorator abstract method, which means any class that inherits from blinkable blinks and needs to be defined when initilised. How it actually blinks is not defined. 
 >
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
@@ -361,7 +361,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+  ![Bulk Rename](screenshots/refactoring_x.png)
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
